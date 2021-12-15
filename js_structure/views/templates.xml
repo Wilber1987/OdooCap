@@ -1,0 +1,14 @@
+<odoo>
+    <data>      
+      <template id="listing" inherit_id="js_module.Main">
+        <xpath expr="." position="inside">          
+          <script type="text/javascript" src="/js_structure/static/js/script.js"></script>
+          <script type="module" src="/js_structure/static/App.mjs"></script>
+          <link rel="stylesheet"  href="/js_structure/static/CSS/MyStyle.css"/>
+        </xpath>
+        <t  position="inside">
+          <h2>Hola structure</h2>        
+        </t>
+      </template>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <template id="assets_frontend">
+      <xpath expr="." position="inside">
+        <script type="module" src="/js_module/static/src/js/module.mjs"></script>
+      </xpath>
+    </template>
+    <template id="Main">
+      <h1>
+        My Index
+      </h1>
+      <div id="MainJsModule"></div>
+    </template>
+    <template id="index">
+      <t id="tCall" t-call="website.layout">        
+        <t  t-call="js_module.assets_frontend"></t>
+        <table class="o_list_table table table-sm table-hover table-striped o_list_table_ungrouped">
+          <theader>
+            <th>Name</th><th>Value 1</th><th>Value 2</th><th>Description</th>
+          </theader>
+          <tbody>
+            <t t-foreach="ModelO" t-as="ModelO">
+                <tr>
+                  <td><t t-esc="ModelO.name"/> </td>
+                  <td><t t-esc="ModelO.value"/></td> 
+                  <td><t t-esc="ModelO.value2"/></td>
+                  <td><t t-esc="ModelO.description"/></td>
+                </tr>
+            </t>
+          </tbody>
+        </table>
+        
+        <t  t-call="js_module.Main"></t>
+      </t>
+    </template>      
+  </data>
+</odoo>
